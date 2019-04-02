@@ -1,7 +1,17 @@
 apply plugin: 'java-library'
 
+apply plugin: 'kotlin'
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation deps.kotlin.stdlib
+
+    implementation deps.rx_android
+    implementation deps.rxjava2
+
+    implementation deps.koin.core
+    implementation deps.koin.android
+    implementation deps.koin.viewmodel
 }
 
 sourceCompatibility = "7"
