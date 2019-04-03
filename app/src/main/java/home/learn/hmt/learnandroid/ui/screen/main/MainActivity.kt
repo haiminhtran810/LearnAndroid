@@ -1,7 +1,8 @@
-package home.learn.hmt.learnandroid
+package home.learn.hmt.learnandroid.ui.screen.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import home.learn.hmt.learnandroid.R
 
 class MainActivity : AppCompatActivity() {
 

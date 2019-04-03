@@ -24,47 +24,46 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     flavorDimensions "default"
-
     libraryVariants.all { variant ->
         def BASE_URL = "http://example.com/"
 
-        if (variant.getName().contains("develop")) {
+        /*if (variant.getName().contains("develop")) {
             BASE_URL = "http://example.com/"
         } else if (variant.getName().contains("production")) {
             BASE_URL = "http://example.com/"
         }
-
+*/
         variant.buildConfigField "String", "BASE_URL", "\"${BASE_URL}\""
+    }
+    productFlavors {
+        dev {
+        }
+        pro {
+        }
+        stg {
+        }
     }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation deps.kotlin.stdlib
-
     implementation deps.modules.domain
-
     implementation 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     implementation deps.rx_android
     implementation deps.rxjava2
-
     //Testing
-
     // Koin
     implementation deps.koin.core
     implementation deps.koin.android
     implementation deps.koin.viewmodel
-
     //retrofit
     implementation deps.retrofit.runtime
     implementation deps.retrofit.gson
     implementation deps.retrofit.adapter
     implementation deps.okhttp_logging_interceptor
-    
 }
