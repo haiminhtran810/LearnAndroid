@@ -2,9 +2,8 @@ package home.learn.hmt.data.di
 
 import home.learn.hmt.data.BuildConfig
 import home.learn.hmt.data.di.Properties.TIME_OUT
-import home.learn.hmt.data.remote.api.UserAPI
+import home.learn.hmt.data.remote.api.RapidAPI
 import home.learn.hmt.data.remote.factory.RxErrorHandlingCallAdapterFactory
-import home.learn.hmt.data.remote.mock.MockUserAPI
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -43,8 +42,7 @@ fun createHeaderInterceptor(
         val newRequest = request.newBuilder()
             .url(newUrl)
             .header("Content-Type", "application/json")
-//                    .header("X-App-Secret", "")
-//                    .header("Authorization", getAccessToken())
+            .header("X-RapidAPI-Key", BuildConfig.KEY_RAPID)
             .method(request.method(), request.body())
             .build()
         chain.proceed(newRequest)
@@ -74,7 +72,6 @@ fun createAppRetrofit(okHttpClient: OkHttpClient): Retrofit {
         .build()
 }
 
-fun createUserApi(retrofit: Retrofit): UserAPI {
-    return if (BuildConfig.DEBUG) MockUserAPI()
-    else retrofit.create(UserAPI::class.java)
+fun createUserApi(retrofit: Retrofit): RapidAPI {
+    return retrofit.create(RapidAPI::class.java)
 }
