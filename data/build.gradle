@@ -28,6 +28,7 @@ android {
     libraryVariants.all { variant ->
         def BASE_URL = "https://musixmatchcom-musixmatch.p.rapidapi.com"
         def KEY_RAPID = "45787032b2msh9949ca1f547b48ep11db7cjsn79c9ac8c1e1e"
+        def KEY_RAPID_HOST = "musixmatchcom-musixmatch.p.rapidapi.com"
         /*if (variant.getName().contains("develop")) {
             BASE_URL = "http://example.com/"
         } else if (variant.getName().contains("production")) {
@@ -36,6 +37,7 @@ android {
 */
         variant.buildConfigField "String", "BASE_URL", "\"${BASE_URL}\""
         variant.buildConfigField "String", "KEY_RAPID", "\"${KEY_RAPID}\""
+        variant.buildConfigField "String", "KEY_RAPID_HOST", "\"${KEY_RAPID_HOST}\""
     }
     productFlavors {
         dev {

@@ -1,7 +1,7 @@
 package home.learn.hmt.learnandroid.ui.screen.home
 
 import androidx.lifecycle.MutableLiveData
-import home.learn.hmt.domain.usecase.user.GetLyricUseCase
+import home.learn.hmt.domain.usecase.music.GetLyricUseCase
 import home.learn.hmt.learnandroid.model.LyricItem
 import home.learn.hmt.learnandroid.model.mapper.LyricItemMapper
 import home.learn.hmt.learnandroid.rx.SchedulerProvider

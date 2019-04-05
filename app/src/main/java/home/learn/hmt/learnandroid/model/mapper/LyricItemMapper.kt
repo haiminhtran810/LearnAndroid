@@ -4,7 +4,7 @@ import home.learn.hmt.domain.model.Lyric
 import home.learn.hmt.learnandroid.model.LyricItem
 import home.learn.hmt.learnandroid.model.base.ItemMapper
 
-class LyricItemMapper : ItemMapper<Lyric, LyricItem> {
+class LyricItemMapper constructor() : ItemMapper<Lyric, LyricItem>() {
     override fun mapToPresentation(model: Lyric) = LyricItem(
         model.lyricsId,
         model.explicit,
