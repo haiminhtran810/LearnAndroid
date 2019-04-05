@@ -1,4 +1,4 @@
-package home.learn.hmt.domain.usecase.user
+package home.learn.hmt.domain.usecase.music
 
 import home.learn.hmt.domain.Constant
 import home.learn.hmt.domain.model.Lyric

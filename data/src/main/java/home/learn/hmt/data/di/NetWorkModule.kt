@@ -42,6 +42,7 @@ fun createHeaderInterceptor(
         val newRequest = request.newBuilder()
             .url(newUrl)
             .header("Content-Type", "application/json")
+            .header("X-RapidAPI-Host", BuildConfig.KEY_RAPID_HOST)
             .header("X-RapidAPI-Key", BuildConfig.KEY_RAPID)
             .method(request.method(), request.body())
             .build()

@@ -4,7 +4,7 @@ import home.learn.hmt.data.model.LyricEntity
 import home.learn.hmt.data.model.base.EntityMapper
 import home.learn.hmt.domain.model.Lyric
 
-class LyricEntityMapper : EntityMapper<Lyric, LyricEntity> {
+class LyricEntityMapper constructor() : EntityMapper<Lyric, LyricEntity>() {
     override fun mapToDomain(entity: LyricEntity) =
         Lyric(
             entity.lyricsId,
