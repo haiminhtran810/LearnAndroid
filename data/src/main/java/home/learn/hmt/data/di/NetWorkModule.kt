@@ -4,6 +4,7 @@ import home.learn.hmt.data.BuildConfig
 import home.learn.hmt.data.di.Properties.TIME_OUT
 import home.learn.hmt.data.remote.api.RapidAPI
 import home.learn.hmt.data.remote.factory.RxErrorHandlingCallAdapterFactory
+import home.learn.hmt.data.remote.mock.MockRapidAPI
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -74,5 +75,7 @@ fun createAppRetrofit(okHttpClient: OkHttpClient): Retrofit {
 }
 
 fun createUserApi(retrofit: Retrofit): RapidAPI {
-    return retrofit.create(RapidAPI::class.java)
+    return if (BuildConfig.MOCK_DATA) {
+        MockRapidAPI()
+    } else retrofit.create(RapidAPI::class.java)
 }

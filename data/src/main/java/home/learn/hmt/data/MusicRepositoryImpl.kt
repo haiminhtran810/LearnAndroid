@@ -19,7 +19,7 @@ class MusicRepositoryImpl constructor(
     }
 
     override fun searchArtist(artist: String, page: Int): Single<List<Artist>> {
-        return userApi.searchArtist(artist, Constants.RATING, page, Constants.PAGE_SIZE).map {
+        return userApi.searchArtist(Constants.RATING, artist, page, Constants.PAGE_SIZE).map {
             artistEntityMapper.mapToDomain(it.artists)
         }
     }

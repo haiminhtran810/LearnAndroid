@@ -12,8 +12,8 @@ interface RapidAPI {
 
     @GET("/wsr/1.1/artist.search")
     fun searchArtist(
-        @Query("q_artist") artist: String,
         @Query("s_artist_rating") rating: String,
+        @Query("q_artist") artist: String,
         @Query("page") page: Int,
         @Query("page_size") page_size: Int
     ): Single<SearchArtistResponse>
