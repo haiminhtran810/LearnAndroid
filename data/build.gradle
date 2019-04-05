@@ -41,10 +41,13 @@ android {
     }
     productFlavors {
         dev {
+            buildConfigField "boolean", "MOCK_DATA", "false"
         }
         pro {
+            buildConfigField "boolean", "MOCK_DATA", "false"
         }
         stg {
+            buildConfigField "boolean", "MOCK_DATA", "true"
         }
     }
 }
@@ -60,6 +63,7 @@ dependencies {
     implementation deps.rx_android
     implementation deps.rxjava2
     //Testing
+    androidTestImplementation deps.mockito.core, { exclude group: 'net.bytebuddy' }
     // Koin
     implementation deps.koin.core
     implementation deps.koin.android
