@@ -4,6 +4,5 @@ import com.google.gson.annotations.Expose
 import home.learn.hmt.data.model.ArtistEntity
 
 data class SearchArtistResponse(
-    @Expose
     val artists: List<ArtistEntity>
 )

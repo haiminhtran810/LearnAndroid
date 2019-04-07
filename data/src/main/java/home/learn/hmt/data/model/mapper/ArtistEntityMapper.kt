@@ -8,7 +8,6 @@ class ArtistEntityMapper constructor() : EntityMapper<Artist, ArtistEntity>() {
     override fun mapToDomain(entity: ArtistEntity) = Artist(
         entity.artistId,
         entity.artistName,
-        entity.artistNameTranslation,
         entity.artistComment,
         entity.artistCountry,
         entity.artistAlias,
@@ -21,7 +20,6 @@ class ArtistEntityMapper constructor() : EntityMapper<Artist, ArtistEntity>() {
     override fun mapTOEntity(model: Artist) = ArtistEntity(
         model.artistId,
         model.artistName,
-        model.artistNameTranslation,
         model.artistComment,
         model.artistCountry,
         model.artistAlias,
