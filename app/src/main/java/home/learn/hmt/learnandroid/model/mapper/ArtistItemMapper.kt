@@ -8,7 +8,6 @@ class ArtistItemMapper constructor() : ItemMapper<Artist, ArtistItem>() {
     override fun mapToPresentation(model: Artist) = ArtistItem(
         model.artistId,
         model.artistName,
-        model.artistNameTranslation,
         model.artistComment,
         model.artistCountry,
         model.artistAlias,
@@ -21,7 +20,6 @@ class ArtistItemMapper constructor() : ItemMapper<Artist, ArtistItem>() {
     override fun mapToDomain(modelItem: ArtistItem) = Artist(
         modelItem.artistId,
         modelItem.artistName,
-        modelItem.artistNameTranslation,
         modelItem.artistComment,
         modelItem.artistCountry,
         modelItem.artistAlias,

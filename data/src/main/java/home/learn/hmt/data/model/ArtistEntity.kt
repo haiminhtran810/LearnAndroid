@@ -11,9 +11,9 @@ data class ArtistEntity(
     @Expose
     @SerializedName("artist_name")
     val artistName: String,
-    @Expose
+   /* @Expose
     @SerializedName("artist_name_translation")
-    val artistNameTranslation: List<String>,
+    val artistNameTranslation: List<String>,*/
     @Expose
     @SerializedName("artist_comment")
     val artistComment: String,

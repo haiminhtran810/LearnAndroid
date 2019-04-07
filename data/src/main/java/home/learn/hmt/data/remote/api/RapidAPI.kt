@@ -1,5 +1,6 @@
 package home.learn.hmt.data.remote.api
 
+import home.learn.hmt.data.model.ArtistEntity
 import home.learn.hmt.data.model.LyricEntity
 import home.learn.hmt.data.remote.response.SearchArtistResponse
 import io.reactivex.Single
@@ -16,5 +17,5 @@ interface RapidAPI {
         @Query("q_artist") artist: String,
         @Query("page") page: Int,
         @Query("page_size") page_size: Int
-    ): Single<SearchArtistResponse>
+    ): Single<List<ArtistEntity>>
 }

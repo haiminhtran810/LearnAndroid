@@ -13,7 +13,6 @@ val lyricEntityFake =
 val artistEntityFake = ArtistEntity(
     1,
     "artist_name",
-    mutableListOf("A"),
     "artist_comment",
     "artist_country",
     mutableListOf("A"),
