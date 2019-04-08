@@ -5,7 +5,6 @@ import home.learn.hmt.learnandroid.model.base.ModelItem
 data class ArtistItem(
     val artistId: Int,
     val artistName: String,
-   /* val artistNameTranslation: List<String>,*/
     val artistComment: String,
     val artistCountry: String,
     val artistAlias: List<String>,
