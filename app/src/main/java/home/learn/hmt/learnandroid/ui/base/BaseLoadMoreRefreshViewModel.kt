@@ -36,7 +36,7 @@ abstract class BaseLoadMoreRefreshViewModel<Item> : BaseViewModel() {
 
     abstract fun loadData(page: Int)
 
-    fun isFirst() = currentPage.value == 0
+    private fun isFirst() = currentPage.value == 0
             && (listItem.value == null || listItem.value?.size == 0)
 
     fun firstLoad() {
@@ -46,7 +46,7 @@ abstract class BaseLoadMoreRefreshViewModel<Item> : BaseViewModel() {
         }
     }
 
-    fun refreshData() {
+    private fun refreshData() {
         loadData(1)
     }
 
@@ -56,7 +56,7 @@ abstract class BaseLoadMoreRefreshViewModel<Item> : BaseViewModel() {
 
     fun getLoadMoreThreshold() = DEFAULT_NUM_VISIBLE_THRESHOLD
 
-    fun getNumberItemPerPage() = DEFAULT_LIMIT
+    private fun getNumberItemPerPage() = DEFAULT_LIMIT
 
     fun resetLoadMore() {
         onScrollListener.resetOnLoadMore()
@@ -74,5 +74,6 @@ abstract class BaseLoadMoreRefreshViewModel<Item> : BaseViewModel() {
         isLoading.value = false
         isRefreshing.value = false
         isLoadMore.value = false
+        onError(it)
     }
 }

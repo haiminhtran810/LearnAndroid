@@ -2,7 +2,10 @@ package home.learn.hmt.learnandroid.utils
 
 import android.os.SystemClock
 import android.view.View
+import android.webkit.WebView
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import home.learn.hmt.learnandroid.Constants
 
 @BindingAdapter("clickSafe")
@@ -18,4 +21,29 @@ fun setClickSafe(view: View, listener: View.OnClickListener?) {
             mLastClickTime = SystemClock.elapsedRealtime()
         }
     })
+}
+
+@BindingAdapter("onScrollListener")
+fun RecyclerView.customScrollListener(listener: RecyclerView.OnScrollListener?) {
+    listener?.let {
+        addOnScrollListener(it)
+    }
+}
+
+@BindingAdapter("onRefreshListener")
+fun SwipeRefreshLayout.customRefreshListener(
+    listener: SwipeRefreshLayout.OnRefreshListener?) {
+    setOnRefreshListener(listener)
+}
+
+@BindingAdapter("loadUrl")
+fun WebView.loadWebUrl(url: String?) {
+    url?.apply {
+        loadUrl(url)
+    }
+}
+
+@BindingAdapter("isRefreshing")
+fun SwipeRefreshLayout.customRefreshing(refreshing: Boolean?) {
+    isRefreshing = refreshing == true
 }
