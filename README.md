@@ -22,3 +22,5 @@ Koin for dependency injection
 Rx Android 2 for reactive extensions for Android 
 
 Rx Java 2 for reactive extensions for JVM Retrofit
+
+C
