@@ -29,6 +29,13 @@ android {
         def BASE_URL = "https://musixmatchcom-musixmatch.p.rapidapi.com"
         def KEY_RAPID = "45787032b2msh9949ca1f547b48ep11db7cjsn79c9ac8c1e1e"
         def KEY_RAPID_HOST = "musixmatchcom-musixmatch.p.rapidapi.com"
+
+        /// Movie
+        def BASE_URL_MOVIE = "https://api.themoviedb.org/3/"
+        def API_KEY = "c733ac6aba3d86364a56d1145bc1d1f9"
+        def SMALL_IMAGE_URL = "https://image.tmdb.org/t/p/w200"
+        def LARGE_IMAGE_URL = "https://image.tmdb.org/t/p/w500"
+        def ORIGINAL_IMAGE_URL = "https://image.tmdb.org/t/p/original"
         /*if (variant.getName().contains("develop")) {
             BASE_URL = "http://example.com/"
         } else if (variant.getName().contains("production")) {
@@ -38,6 +45,13 @@ android {
         variant.buildConfigField "String", "BASE_URL", "\"${BASE_URL}\""
         variant.buildConfigField "String", "KEY_RAPID", "\"${KEY_RAPID}\""
         variant.buildConfigField "String", "KEY_RAPID_HOST", "\"${KEY_RAPID_HOST}\""
+
+
+        variant.buildConfigField "String", "BASE_URL_MOVIE", "\"${BASE_URL_MOVIE}\""
+        variant.buildConfigField "String", "TMBD_API_KEY", "\"${API_KEY}\""
+        variant.buildConfigField "String", "SMALL_IMAGE_URL", "\"${SMALL_IMAGE_URL}\""
+        variant.buildConfigField "String", "LARGE_IMAGE_URL", "\"${LARGE_IMAGE_URL}\""
+        variant.buildConfigField "String", "ORIGINAL_IMAGE_URL", "\"${ORIGINAL_IMAGE_URL}\""
     }
     productFlavors {
         dev {

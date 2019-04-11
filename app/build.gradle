@@ -80,7 +80,11 @@ dependencies {
     // rxjava
     implementation deps.rx_android
     implementation deps.rxjava2
-
+    // coroutines
+    implementation deps.coroutines.core
+    implementation deps.coroutines.android
+    // ahbottomnavigation
+    implementation deps.ahbottomnavigation.ahbottomnavigation
     // Chameleon
     api 'com.cloudmade.chameleon:chameleon:1.1.0'
     annotationProcessor 'com.cloudmade.chameleon:chameleon:1.1.0'

@@ -3,12 +3,12 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".ui.screen.main.MainActivity">
+        tools:context=".ui.screen.MainActivity">
 
     <data>
         <variable
                 name="viewModel"
-                type="home.learn.hmt.learnandroid.ui.screen.main.MainViewModel"/>
+                type="home.learn.hmt.learnandroid.ui.screen.MainViewModel"/>
     </data>
     <FrameLayout
             android:id="@+id/container"

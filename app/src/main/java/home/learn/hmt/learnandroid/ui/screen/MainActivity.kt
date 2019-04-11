@@ -1,4 +1,4 @@
-package home.learn.hmt.learnandroid.ui.screen.main
+package home.learn.hmt.learnandroid.ui.screen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
