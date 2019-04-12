@@ -1,6 +1,5 @@
-package home.learn.hmt.data.remote
+package home.learn.hmt.data.remote.response.base
 
-import home.learn.hmt.data.remote.response.BaseErrorResponse
 import retrofit2.Response
 import java.io.IOException
 
@@ -81,19 +80,31 @@ class BaseException : RuntimeException {
         const val UNEXPECTED = 3
 
         fun toHttpError(response: Response<*>): BaseException {
-            return BaseException(HTTP, response)
+            return BaseException(
+                HTTP,
+                response
+            )
         }
 
         fun toNetworkError(cause: Throwable): BaseException {
-            return BaseException(NETWORK, cause)
+            return BaseException(
+                NETWORK,
+                cause
+            )
         }
 
         fun toServerError(errorResponse: BaseErrorResponse): BaseException {
-            return BaseException(SERVER, errorResponse)
+            return BaseException(
+                SERVER,
+                errorResponse
+            )
         }
 
         fun toUnexpectedError(cause: Throwable): BaseException {
-            return BaseException(UNEXPECTED, cause)
+            return BaseException(
+                UNEXPECTED,
+                cause
+            )
         }
     }
 }

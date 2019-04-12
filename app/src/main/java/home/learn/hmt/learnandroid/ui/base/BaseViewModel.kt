@@ -3,7 +3,7 @@ package home.learn.hmt.learnandroid.ui.base
 import android.text.TextUtils
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import home.learn.hmt.data.remote.BaseException
+import home.learn.hmt.data.remote.response.base.BaseException
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import java.lang.Exception
