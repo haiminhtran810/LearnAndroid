@@ -1,12 +1,11 @@
 package home.learn.hmt.data.remote.factory
 
 import com.google.gson.Gson
-import home.learn.hmt.data.remote.BaseException
-import home.learn.hmt.data.remote.response.BaseErrorResponse
+import home.learn.hmt.data.remote.response.base.BaseException
+import home.learn.hmt.data.remote.response.base.BaseErrorResponse
 import io.reactivex.*
 import retrofit2.*
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import io.reactivex.*
 import io.reactivex.functions.Function
 import java.io.IOException
 import java.lang.reflect.Type

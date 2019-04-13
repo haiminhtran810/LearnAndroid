@@ -1,4 +1,4 @@
-package home.learn.hmt.data.remote.response
+package home.learn.hmt.data.remote.response.base
 
 import com.google.gson.annotations.SerializedName
 import home.learn.hmt.data.remote.Error

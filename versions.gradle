@@ -47,6 +47,8 @@ versions.robolectric = "3.4.2"
 versions.oss_licenses = "16.0.0"
 versions.license_plugin = "0.9.3"
 versions.koin = "1.0.0"
+versions.coroutines = "1.1.1"
+versions.ahbottom = "2.1.0"
 def deps = [:]
 
 def build_versions = [:]
@@ -54,6 +56,16 @@ build_versions.min_sdk = 21
 build_versions.target_sdk = 28
 build_versions.build_tools = "28.0.0"
 ext.build_versions = build_versions
+
+def coroutines = [:]
+coroutines.core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+coroutines.android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+deps.coroutines = coroutines
+
+def ahbottomnavigation = [:]
+ahbottomnavigation.ahbottomnavigation = "com.aurelhubert:ahbottomnavigation:$versions.ahbottom"
+deps.ahbottomnavigation = ahbottomnavigation
+
 
 def support = [:]
 support.annotations = "com.android.support:support-annotations:$versions.support"
