@@ -5,7 +5,7 @@ import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface MusicAPI {
+interface MovieAPI {
     @GET("movie/top_rated")
     fun getTopRated(@Query(ApiParams.PAGE) page: Int): Single<GetMovieListResponse>
 }

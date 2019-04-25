@@ -12,7 +12,7 @@ open class BaseListResponse<T>{
     @SerializedName("total_pages")
     var total_pages: Int? = null
     @SerializedName("results")
-    var results = ArrayList<Movie>()
+    var results = ArrayList<T>()
     /*@SerializedName("dates")
     var dates: Dates? = null*/
 }
