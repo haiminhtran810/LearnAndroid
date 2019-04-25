@@ -2,6 +2,7 @@ package home.learn.hmt.data.di
 
 import home.learn.hmt.data.BuildConfig
 import home.learn.hmt.data.di.Properties.TIME_OUT
+import home.learn.hmt.data.remote.api.MovieAPI
 import home.learn.hmt.data.remote.api.RapidAPI
 import home.learn.hmt.data.remote.factory.RxErrorHandlingCallAdapterFactory
 import home.learn.hmt.data.remote.mock.MockRapidAPI
@@ -37,14 +38,13 @@ fun createHeaderInterceptor(
 ): Interceptor {
     return Interceptor { chain ->
         val request = chain.request()
-        val newUrl = request.url().newBuilder()
-//            .addQueryParameter("api_key", "")
+        val newUrl = request.url().newBuilder().addQueryParameter("api_key", BuildConfig.TMBD_API_KEY)
             .build()
         val newRequest = request.newBuilder()
             .url(newUrl)
             .header("Content-Type", "application/json")
-            .header("X-RapidAPI-Host", BuildConfig.KEY_RAPID_HOST)
-            .header("X-RapidAPI-Key", BuildConfig.KEY_RAPID)
+            /*.header("X-RapidAPI-Host", BuildConfig.KEY_RAPID_HOST)
+            .header("X-RapidAPI-Key", BuildConfig.KEY_RAPID)*/
             .method(request.method(), request.body())
             .build()
         chain.proceed(newRequest)
@@ -69,13 +69,14 @@ fun createAppRetrofit(okHttpClient: OkHttpClient): Retrofit {
 //                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .addCallAdapterFactory(RxErrorHandlingCallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl(BuildConfig.BASE_URL)
+        .baseUrl(BuildConfig.BASE_URL_MOVIE)
         .client(okHttpClient)
         .build()
 }
 
-fun createUserApi(retrofit: Retrofit): RapidAPI {
-    return if (BuildConfig.MOCK_DATA) {
+fun createUserApi(retrofit: Retrofit): MovieAPI {
+    return retrofit.create(MovieAPI::class.java)
+    /*if (BuildConfig.MOCK_DATA) {
         MockRapidAPI()
-    } else retrofit.create(RapidAPI::class.java)
+    } else*/
 }
