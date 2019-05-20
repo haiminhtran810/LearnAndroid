@@ -3,8 +3,7 @@ package home.learn.hmt.learnandroid.ui.screen
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import home.learn.hmt.learnandroid.R
-import home.learn.hmt.learnandroid.ui.screen.home.HomeFragment
-import home.learn.hmt.learnandroid.ui.screen.search.SearchArtistFragment
+import home.learn.hmt.learnandroid.ui.screen.topRate.TopRateFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
                 .commit()*/
 
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, SearchArtistFragment.newInstance(), SearchArtistFragment.TAG)
+                .replace(R.id.container, TopRateFragment.newInstance(), TopRateFragment.TAG)
                 .commit()
         }
     }

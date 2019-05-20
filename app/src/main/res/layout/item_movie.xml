@@ -4,10 +4,10 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable name="data"
+                  type="home.learn.hmt.learnandroid.model.MovieItem"/>
         <import type="android.text.TextUtils"/>
     </data>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,6 +22,7 @@
                 android:gravity="center"
                 android:textColor="@color/greyishBrown"
                 bind:layout_constraintLeft_toLeftOf="parent"
+                bind:layout_constraintTop_toTopOf="parent"
                 tools:text="1"/>
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -31,7 +32,9 @@
                 android:paddingLeft="@dimen/dp_5"
                 android:paddingRight="@dimen/dp_5"
                 android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_foreground"
                 bind:layout_constraintLeft_toRightOf="@+id/txt_stt"
+                bind:layout_constraintTop_toTopOf="parent"
                 tools:src="@drawable/ic_launcher_foreground"/>
 
         <TextView
@@ -40,8 +43,10 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:lines="1"
+                android:text="@{data.title}"
                 android:textColor="@android:color/black"
                 bind:layout_constraintLeft_toRightOf="@+id/img_movie"
+                bind:layout_constraintTop_toTopOf="parent"
                 tools:text="Avenger, The War"/>
 
         <TextView
@@ -55,6 +60,7 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textColor="@color/greyishBrown"
+                android:text="@{data.overview}"
                 bind:layout_constraintLeft_toRightOf="@+id/img_movie"
                 bind:layout_constraintTop_toBottomOf="@+id/txt_title_movie"
                 tools:text="Sound by English"/>
@@ -69,6 +75,7 @@
                 bind:layout_constraintLeft_toRightOf="@+id/img_movie">
 
             <TextView
+
                     android:id="@+id/txt_point"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -82,7 +89,6 @@
                     android:src="@android:drawable/star_big_off"/>
         </LinearLayout>
 
-
         <TextView
                 android:id="@+id/txt_money"
                 android:layout_width="wrap_content"
@@ -95,11 +101,13 @@
                 tools:text="80.000 đ"/>
 
         <androidx.appcompat.widget.AppCompatImageView
+                android:visibility="gone"
                 android:id="@+id/img_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@android:drawable/btn_default_small"
-                bind:layout_constraintRight_toRightOf="parent"/>
+                bind:layout_constraintRight_toRightOf="parent"
+                bind:layout_constraintTop_toTopOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
