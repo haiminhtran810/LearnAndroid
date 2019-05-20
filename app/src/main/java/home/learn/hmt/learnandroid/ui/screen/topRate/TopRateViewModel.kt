@@ -1,22 +1,17 @@
-package home.learn.hmt.learnandroid.ui.screen.search
+package home.learn.hmt.learnandroid.ui.screen.topRate
 
-import androidx.lifecycle.MutableLiveData
 import home.learn.hmt.domain.usecase.movie.GetTopRatedUseCase
-import home.learn.hmt.domain.usecase.music.GetLyricUseCase
-import home.learn.hmt.domain.usecase.music.SearchArtistUseCase
-import home.learn.hmt.learnandroid.model.ArtistItem
-import home.learn.hmt.learnandroid.model.mapper.ArtistItemMapper
+import home.learn.hmt.learnandroid.model.MovieItem
 import home.learn.hmt.learnandroid.model.mapper.MovieItemMapper
 import home.learn.hmt.learnandroid.rx.SchedulerProvider
 import home.learn.hmt.learnandroid.ui.base.BaseLoadMoreRefreshViewModel
-import home.learn.hmt.learnandroid.ui.base.BaseViewModel
 
-class SearchArtistViewModel(
+class TopRateViewModel(
     private val movieItemMapper: MovieItemMapper,
     private val getTopRatedUseCase: GetTopRatedUseCase,
 
     private val schedulerProvider: SchedulerProvider
-) : BaseLoadMoreRefreshViewModel<ArtistItem>() {
+) : BaseLoadMoreRefreshViewModel<MovieItem>() {
 
     /*override fun loadData(page: Int) {
         addDisposable(searchArtistUseCase.createObservable(SearchArtistUseCase.Params("c", page))
@@ -51,7 +46,12 @@ class SearchArtistViewModel(
             }
             .subscribe({
                 currentPage.value = page
-                onLoadSuccess(it.size)
+                if (currentPage.value == 1) listItem.value?.clear()
+                if (isRefreshing.value == true) resetLoadMore()
+                val newList = listItem.value ?: arrayListOf()
+                newList.addAll(it)
+                listItem.value = newList
+                onLoadSuccess(it?.size ?: 0)
             }, {
                 onLoadFailData(it)
             })

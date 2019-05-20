@@ -5,7 +5,7 @@
     <data>
         <variable
                 name="viewModel"
-                type="home.learn.hmt.learnandroid.ui.screen.search.SearchArtistViewModel"/>
+                type="home.learn.hmt.learnandroid.ui.screen.topRate.TopRateViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
