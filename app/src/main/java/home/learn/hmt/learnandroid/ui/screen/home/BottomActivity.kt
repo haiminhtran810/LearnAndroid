@@ -1,9 +1,11 @@
-package home.learn.hmt.learnandroid.ui.screen
+package home.learn.hmt.learnandroid.ui.screen.home
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
+import home.learn.hmt.learnandroid.R
+import home.learn.hmt.learnandroid.ui.screen.topRate.TopRateFragment
 
 class BottomActivity : AppCompatActivity() {
 
@@ -11,15 +13,14 @@ class BottomActivity : AppCompatActivity() {
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                textMessage.setText(R.string.title_home)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                textMessage.setText(R.string.title_dashboard)
+
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                textMessage.setText(R.string.title_notifications)
+
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -29,9 +30,14 @@ class BottomActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bottom)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        /*supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, HomeFragment.newInstance(), HomeFragment.TAG)
+                    .commit()*/
 
-        textMessage = findViewById(R.id.message)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, TopRateFragment.newInstance(), TopRateFragment.TAG)
+            .commit()
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 }

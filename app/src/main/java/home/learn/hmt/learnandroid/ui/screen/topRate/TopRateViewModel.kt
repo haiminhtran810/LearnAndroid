@@ -17,13 +17,14 @@ class TopRateViewModel(
 ) : BaseLoadMoreRefreshViewModel<MovieItem>() {
     var postLivedata: LiveData<PagedList<MovieItem>>? = null
 
-    init {
-        val config = PagedList.Config.Builder()
-            .setPageSize(30)
-            .setEnablePlaceholders(false)
-            .build()
-        //postLivedata =
-    }
+    private val PAGE_SIZE = 10
+    private val INITIAL_LOAD_SIZE_HINT = 25
+
+   /* private val config = android.arch.paging.PagedList.Config.Builder()
+        .setEnablePlaceholders(false)
+        .setInitialLoadSizeHint(INITIAL_LOAD_SIZE_HINT)
+        .setPageSize(PAGE_SIZE)
+        .build()*/
 
     // Load More Code
     override fun loadData(page: Int) {
@@ -45,10 +46,5 @@ class TopRateViewModel(
                 onLoadFailData(it)
             })
         )
-    }
-
-    // Paging
-    private fun initializePagedListBuilder(config: PagedList.Config): LivePagedListBuilder<String, MovieItem> {
-        return null!!
     }
 }

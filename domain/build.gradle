@@ -12,6 +12,8 @@ dependencies {
     implementation deps.koin.core
     implementation deps.koin.android
     implementation deps.koin.viewmodel
+
+    implementation deps.paging
 }
 
 sourceCompatibility = "7"
