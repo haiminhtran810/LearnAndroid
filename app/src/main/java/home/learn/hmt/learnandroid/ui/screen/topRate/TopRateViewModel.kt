@@ -1,5 +1,8 @@
 package home.learn.hmt.learnandroid.ui.screen.topRate
 
+import androidx.lifecycle.LiveData
+import androidx.paging.LivePagedListBuilder
+import androidx.paging.PagedList
 import home.learn.hmt.domain.usecase.movie.GetTopRatedUseCase
 import home.learn.hmt.learnandroid.model.MovieItem
 import home.learn.hmt.learnandroid.model.mapper.MovieItemMapper
@@ -12,31 +15,18 @@ class TopRateViewModel(
 
     private val schedulerProvider: SchedulerProvider
 ) : BaseLoadMoreRefreshViewModel<MovieItem>() {
+    var postLivedata: LiveData<PagedList<MovieItem>>? = null
 
-    /*override fun loadData(page: Int) {
-        addDisposable(searchArtistUseCase.createObservable(SearchArtistUseCase.Params("c", page))
-            .subscribeOn(schedulerProvider.io())
-            .observeOn(schedulerProvider.ui())
-            .map {
-                artistItemMapper.mapToPresentation(it)
-            }
-            .subscribe({
-                currentPage.value = page
-                if (page == 1) {
-                    listItem.value?.clear()
-                }
-                if (isRefreshing.value == true) resetLoadMore()
+    private val PAGE_SIZE = 10
+    private val INITIAL_LOAD_SIZE_HINT = 25
 
-                val newList = if (listItem.value != null) listItem.value else ArrayList()
-                newList?.addAll(it)
-                listItem.value = newList
-                onLoadSuccess(it.size)
-            }, {
-                onLoadFailData(it)
-            })
-        )
-    }*/
+   /* private val config = android.arch.paging.PagedList.Config.Builder()
+        .setEnablePlaceholders(false)
+        .setInitialLoadSizeHint(INITIAL_LOAD_SIZE_HINT)
+        .setPageSize(PAGE_SIZE)
+        .build()*/
 
+    // Load More Code
     override fun loadData(page: Int) {
         addDisposable(getTopRatedUseCase.createObservable(GetTopRatedUseCase.Params(page))
             .subscribeOn(schedulerProvider.io())

@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import home.learn.hmt.learnandroid.R
-import home.learn.hmt.learnandroid.databinding.ItemArtistBinding
 import home.learn.hmt.learnandroid.databinding.ItemMovieBinding
 import home.learn.hmt.learnandroid.model.MovieItem
 import home.learn.hmt.learnandroid.ui.base.BaseRecyclerAdapter
@@ -21,10 +20,10 @@ class TopRateAdapter(val itemClickListener: (MovieItem) -> Unit = {}) :
         }
 
     }) {
-    override fun bind(binding: ItemMovieBinding, item: MovieItem) {
+    override fun bind(binding: ItemMovieBinding, item: MovieItem, position: Int) {
         binding?.apply {
             data = item
-            txtStt.text = itemCount.toString()
+            txtStt.text = position.toString()
             root.setOnClickListener {
                 item?.apply {
                     itemClickListener(this)

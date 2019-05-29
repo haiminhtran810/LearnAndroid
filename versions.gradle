@@ -49,6 +49,7 @@ versions.license_plugin = "0.9.3"
 versions.koin = "1.0.0"
 versions.coroutines = "1.1.1"
 versions.ahbottom = "2.1.0"
+versions.paging= "1.0.0"
 def deps = [:]
 
 def build_versions = [:]
@@ -224,6 +225,8 @@ koin.core = "org.koin:koin-core:$versions.koin"
 koin.android = "org.koin:koin-android:$versions.koin"
 koin.viewmodel = "org.koin:koin-androidx-viewmodel:$versions.koin"
 deps.koin = koin
+
+deps.paging = "android.arch.paging:runtime:$versions.paging"
 
 ext.deps = deps
 
