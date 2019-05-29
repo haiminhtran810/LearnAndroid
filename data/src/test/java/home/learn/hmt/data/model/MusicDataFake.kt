@@ -1,9 +1,5 @@
 package home.learn.hmt.data.model
 
-import home.learn.hmt.data.model.ArtistEntity
-import home.learn.hmt.data.model.LyricEntity
-import home.learn.hmt.data.remote.response.SearchArtistResponse
-
 val lyricEntityFake =
     LyricEntity(
         "123", 123, "lyrics_body",
@@ -14,9 +10,8 @@ val lyricEntityFake =
 val artistEntityFake = ArtistEntity(
     1,
     "artist_name",
-    mutableListOf("A"),
+    "A",
     "artist_comment",
-    "artist_country",
     mutableListOf("A"),
     1,
     "artist_twitter_url",

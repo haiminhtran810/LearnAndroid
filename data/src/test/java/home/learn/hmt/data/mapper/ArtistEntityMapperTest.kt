@@ -1,6 +1,5 @@
 package home.learn.hmt.data.mapper
 
-import home.learn.hmt.data.model.mapper.LyricEntityMapper
 import home.learn.hmt.data.remote.mock.lyricEntityFake
 import org.junit.Before
 import org.junit.Test

@@ -19,11 +19,11 @@ abstract class BaseRecyclerAdapter<T, V : ViewDataBinding>(callBack: DiffUtil.It
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<V>, position: Int) {
-        bind(holder.binding, getItem(position))
+        bind(holder.binding, getItem(position), position)
         holder.binding.executePendingBindings()
     }
 
     protected abstract fun createBinding(parent: ViewGroup): V
 
-    protected abstract fun bind(binding: V, item: T)
+    protected abstract fun bind(binding: V, item: T, position: Int)
 }

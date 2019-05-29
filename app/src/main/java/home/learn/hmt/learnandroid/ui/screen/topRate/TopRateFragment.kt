@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import home.learn.hmt.learnandroid.databinding.FragmentLoadMoreRefreshBinding
 import home.learn.hmt.learnandroid.model.MovieItem
 import home.learn.hmt.learnandroid.ui.base.BaseLoadMoreRefreshFragment
+import home.learn.hmt.learnandroid.ui.screen.topRate.adapter.TopRatePagingAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TopRateFragment :
@@ -15,6 +17,7 @@ class TopRateFragment :
     override val viewModel by viewModel<TopRateViewModel>()
 
     private lateinit var adapterSearch: TopRateAdapter
+    private lateinit var adapterSearchPaging: TopRatePagingAdapter
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

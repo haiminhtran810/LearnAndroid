@@ -3,6 +3,7 @@
           package="home.learn.hmt.learnandroid">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:name=".MainApplication"
             android:allowBackup="false"
@@ -11,6 +12,10 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity
+                android:name=".ui.screen.BottomActivity"
+                android:label="@string/title_activity_bottom">
+        </activity>
         <activity android:name=".ui.screen.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

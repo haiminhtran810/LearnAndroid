@@ -4,4 +4,8 @@
     <string name="id_music">45787032b2msh9949ca1f547b48ep11db7cjsn79c9ac8c1e1e</string>
     <string name="info_message">No More Items</string>
     <string name="try_again">Click to retry</string>
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
